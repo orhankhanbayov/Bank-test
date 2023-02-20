@@ -11,21 +11,25 @@ class Account {
       console.log(
         `${transaction[0].date} || ${transaction[0].credit || ''} || ${
           transaction[0].debit || ''
-        } || ${transaction[1]}`
+        }|| ${transaction[1]}`
       );
     });
   }
 
+  getBalance() {
+    return (this.balance * 1).toFixed(2);
+  }
+
   withdraw(withdrawl) {
-    this.balance -= withdrawl.debit;
+    this.balance -= withdrawl.debit * 1;
     // Creates an array of the withdrawl object plus the balance then pushes it to the start of the transactions array in constructor
-    this.transactions.unshift([withdrawl, this.balance.toFixed(2)]);
+    this.transactions.unshift([withdrawl, (this.balance * 1).toFixed(2)]);
   }
 
   deposit(deposit) {
-    this.balance += deposit.credit;
+    this.balance += deposit.credit * 1;
     // Creates an array of the deposit object plus the balance then pushes it to the start of the transactions array in constructor
-    this.transactions.unshift([deposit, this.balance.toFixed(2)]);
+    this.transactions.unshift([deposit, (this.balance * 1).toFixed(2)]);
   }
 }
 

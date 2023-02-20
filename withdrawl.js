@@ -1,7 +1,7 @@
 class Withdrawl {
   constructor(date, debit) {
     this.date = date;
-    this.debit = debit;
+    this.debit = (debit * 1).toFixed(2);
   }
 }
 

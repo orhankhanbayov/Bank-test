@@ -27,11 +27,14 @@ Example usage in REPEL from root directory of repository:
       const Withdrawl = require('./withdrawl');
 
       const bank = new Account();
-      const deposit1 = new Deposit('20/02/2023', 1500);
+      const deposit1 = new Deposit('10/01/2023', 1000);
       bank.deposit(deposit1);
-      const withdraw = new Withdrawl('20/02/2023', 1000);
+      const deposit2 = new Deposit('13/01/2023', 2000);
+      bank.deposit(deposit2);
+      const withdraw = new Withdrawl('14/01/2023', 500);
       bank.withdraw(withdraw);
       bank.getStatement();
 
 Output:
+
 ![Alt Text](./screenshot.png)
