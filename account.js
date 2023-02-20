@@ -6,6 +6,7 @@ class Account {
 
   getStatement() {
     console.log('date || credit || debit || balance');
+    // Itterates through the nested array of transactions then console logs it in the correct format
     this.transactions.forEach((transaction) => {
       console.log(
         `${transaction[0].date} || ${transaction[0].credit || ''} || ${
@@ -15,14 +16,16 @@ class Account {
     });
   }
 
-  withdraw(transaction) {
-    this.balance -= transaction.debit;
-    this.transactions.unshift([transaction, this.balance.toFixed(2)]);
+  withdraw(withdrawl) {
+    this.balance -= withdrawl.debit;
+    // Creates an array of the withdrawl object plus the balance then pushes it to the start of the transactions array in constructor
+    this.transactions.unshift([withdrawl, this.balance.toFixed(2)]);
   }
 
-  deposit(transaction) {
-    this.balance += transaction.credit;
-    this.transactions.unshift([transaction, this.balance.toFixed(2)]);
+  deposit(deposit) {
+    this.balance += deposit.credit;
+    // Creates an array of the deposit object plus the balance then pushes it to the start of the transactions array in constructor
+    this.transactions.unshift([deposit, this.balance.toFixed(2)]);
   }
 }
 
