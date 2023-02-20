@@ -11,11 +11,11 @@ These were the requirements:
 
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
-How to install?
+How to install:
 
 `npm install`
 
-how to run tests?
+how to run tests:
 
 `jest`
 
