@@ -11,7 +11,7 @@ class Account {
       console.log(
         `${transaction[0].date} || ${transaction[0].credit || ''} || ${
           transaction[0].debit || ''
-        }|| ${transaction[1]}`
+        } || ${transaction[1]}`
       );
     });
   }
