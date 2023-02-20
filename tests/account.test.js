@@ -9,16 +9,16 @@ describe('account', () => {
 
     it('adds 1000 to balance when deposit is made', () => {
       const bank = new Account();
-      let deposit = { date: '20/02/2023', debit: '', credit: 1000 };
+      let deposit = { date: '20/02/2023', credit: 1000 };
       bank.deposit(deposit);
       expect(bank.balance).toBe(1000);
     });
 
     it('balance is 500 after withdrawl of 1000 is made', () => {
       const bank = new Account();
-      let deposit1 = { date: '20/02/2023', debit: '', credit: 1500 };
+      let deposit1 = { date: '20/02/2023', credit: 1500 };
       bank.deposit(deposit1);
-      let withdrawl = { date: '20/02/2023', debit: 1000, credit: '' };
+      let withdrawl = { date: '20/02/2023', debit: 1000 };
       bank.withdraw(withdrawl);
       expect(bank.balance).toBe(500);
     });

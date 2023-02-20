@@ -8,7 +8,9 @@ class Account {
     console.log('date || credit || debit || balance');
     this.transactions.forEach((transaction) => {
       console.log(
-        `${transaction[0].date} || ${transaction[0].credit} || ${transaction[0].debit} || ${transaction[1]}`
+        `${transaction[0].date} || ${transaction[0].credit || ''} || ${
+          transaction[0].debit || ''
+        } || ${transaction[1]}`
       );
     });
   }
