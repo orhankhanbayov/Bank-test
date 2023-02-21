@@ -11,16 +11,16 @@ describe('Account integration', () => {
 
     it('adds 1000 to balance when deposit is made', () => {
       const bank = new Account();
-      const deposit1 = new Deposit('20/02/2023', 1000);
+      const deposit1 = new Deposit(1000);
       bank.deposit(deposit1);
       expect(bank.getBalance()).toBe('1000.00');
     });
 
     it('balance is 500 after withdrawl of 1000 is made', () => {
       const bank = new Account();
-      const deposit1 = new Deposit('20/02/2023', 1500);
+      const deposit1 = new Deposit(1500);
       bank.deposit(deposit1);
-      const withdraw = new Withdrawl('20/02/2023', 1000);
+      const withdraw = new Withdrawl(1000);
       bank.withdraw(withdraw);
       expect(bank.balance).toBe(500);
     });
@@ -29,10 +29,10 @@ describe('Account integration', () => {
   describe('statement is correctly formatted', () => {
     const logSpy = jest.spyOn(global.console, 'log');
     const bank = new Account();
-    const deposit1 = new Deposit('20/02/2023', 1500);
+    const deposit1 = new Deposit(1500);
     bank.deposit(deposit1);
     bank.getStatement();
     expect(logSpy).toHaveBeenCalledWith('date || credit || debit || balance');
-    expect(logSpy).toHaveBeenCalledWith('20/02/2023 || 1500.00 ||  || 1500.00');
+    expect(logSpy).toHaveBeenCalledWith('21/02/2023 || 1500.00 ||  || 1500.00');
   });
 });

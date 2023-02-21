@@ -1,6 +1,6 @@
 class Withdrawl {
-  constructor(date, debit) {
-    this.date = date;
+  constructor(debit) {
+    this.date = new Date(Date.now()).toLocaleDateString('en-GB');
     this.debit = (debit * 1).toFixed(2);
   }
 }
