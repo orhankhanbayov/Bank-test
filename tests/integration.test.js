@@ -33,6 +33,6 @@ describe('Account integration', () => {
     bank.deposit(deposit1);
     bank.getStatement();
     expect(logSpy).toHaveBeenCalledWith('date || credit || debit || balance');
-    expect(logSpy).toHaveBeenCalledWith('20/02/2023 || 1500.00 || || 1500.00');
+    expect(logSpy).toHaveBeenCalledWith('20/02/2023 || 1500.00 ||  || 1500.00');
   });
 });
