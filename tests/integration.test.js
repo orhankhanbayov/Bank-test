@@ -1,6 +1,7 @@
 const Account = require('../account');
 const Withdrawl = require('../withdrawl');
 const Deposit = require('../deposit');
+jest.useFakeTimers().setSystemTime(new Date('2023-02-21'));
 
 describe('Account integration', () => {
   describe('balance is calculated correctly', () => {

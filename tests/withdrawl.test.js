@@ -1,4 +1,5 @@
 const Withdrawl = require('../withdrawl');
+jest.useFakeTimers().setSystemTime(new Date('2023-02-21'));
 
 describe('Deposit', () => {
   it('creates an instance of class', () => {
